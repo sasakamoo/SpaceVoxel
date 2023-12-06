@@ -4,6 +4,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Shader.h"
+
 float squareVertices[] = {
      0.5f,  0.5f, 0.0f, // Top Right    
      0.5f, -0.5f, 0.0f, // Bottom Right
@@ -33,39 +35,6 @@ float triangle3[] = {
     -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 
      0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f
 };
-
-const char* vertexShaderSource1 = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos, 1.0);\n"
-    "}\0";
-
-const char* fragmentShaderSource1 = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "uniform vec4 color;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = color;\n"
-    "}\0";
-
-const char* vertexShaderSource2 = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "layout (location = 1) in vec3 aColor;\n"
-    "out vec3 color;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos, 1.0);\n"
-        "color = aColor;\n"
-    "}\0";
-
-const char* fragmentShaderSource2 = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "in vec3 color;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(color, 1.0);\n"
-    "}\0";
 
 void error_callback(int error, const char* description) {
     std::cerr << "Error: " << description << std::endl;
@@ -111,89 +80,8 @@ int main() {
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numAttributes);
     std::cout << "Maximum Number of Vertex Attributes Supported: " << numAttributes << std::endl;
 
-    // Vertex Shader 1
-    unsigned int vertexShader1;
-    vertexShader1 = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader1, 1, &vertexShaderSource1, NULL);
-    glCompileShader(vertexShader1);
-
-    int success;
-    char infoLog[512];
-    glGetShaderiv(vertexShader1, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(vertexShader1, 512, NULL, infoLog);
-        std::cerr << "Error: Vertex Shader Compilation Failed\n" << infoLog << std::endl;
-    }
-
-    // Fragment Shader 1
-    unsigned int fragmentShader1;
-    fragmentShader1 = glCreateShader(GL_FRAGMENT_SHADER);   
-    glShaderSource(fragmentShader1, 1, &fragmentShaderSource1, NULL);
-    glCompileShader(fragmentShader1);
-
-    glGetShaderiv(fragmentShader1, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(fragmentShader1, 512, NULL, infoLog);
-        std::cerr << "Error: Fragment Shader Compilation Failed\n" << infoLog << std::endl;
-    }
-
-    // Shader Program 1
-    unsigned int shaderProgram1;
-    shaderProgram1 = glCreateProgram();
-    glAttachShader(shaderProgram1, vertexShader1);
-    glAttachShader(shaderProgram1, fragmentShader1);
-    glLinkProgram(shaderProgram1);
-
-    glGetProgramiv(shaderProgram1, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(shaderProgram1, 512, NULL, infoLog);
-        std::cerr << "Error: Shader Program Linking Failed\n" << infoLog << std::endl;
-    }
-
-    // Can now delete vertex and fragment shaders
-    glDeleteShader(vertexShader1);
-    glDeleteShader(fragmentShader1);
-
-    // Vertex Shader 2
-    unsigned int vertexShader2;
-    vertexShader2 = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader2, 1, &vertexShaderSource2, NULL);
-    glCompileShader(vertexShader2);
-
-    glGetShaderiv(vertexShader2, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(vertexShader2, 512, NULL, infoLog);
-        std::cerr << "Error: Vertex Shader Compilation Failed\n" << infoLog << std::endl;
-    }
-
-    // Fragment Shader 2
-    unsigned int fragmentShader2;
-    fragmentShader2 = glCreateShader(GL_FRAGMENT_SHADER);   
-    glShaderSource(fragmentShader2, 1, &fragmentShaderSource2, NULL);
-    glCompileShader(fragmentShader2);
-
-    glGetShaderiv(fragmentShader2, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(fragmentShader2, 512, NULL, infoLog);
-        std::cerr << "Error: Fragment Shader Compilation Failed\n" << infoLog << std::endl;
-    }
-
-    // Shader Program 2
-    unsigned int shaderProgram2;
-    shaderProgram2 = glCreateProgram();
-    glAttachShader(shaderProgram2, vertexShader2);
-    glAttachShader(shaderProgram2, fragmentShader2);
-    glLinkProgram(shaderProgram2);
-
-    glGetProgramiv(shaderProgram2, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(shaderProgram2, 512, NULL, infoLog);
-        std::cerr << "Error: Shader Program Linking Failed\n" << infoLog << std::endl;
-    }
-
-    // Can now delete vertex and fragment shaders
-    glDeleteShader(vertexShader2);
-    glDeleteShader(fragmentShader2);
+    Shader shaderProgram1("./../vertexShader1.shader", "./../fragmentShader1.shader");
+    Shader shaderProgram2("./../vertexShader2.shader", "./../fragmentShader2.shader");
 
     // Vertex Array & Buffer Objects
     unsigned int VAO, VBO, EBO, VAO1, VAO2, VBO1, VBO2, VAO3, VBO3;
@@ -244,14 +132,14 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        glUseProgram(shaderProgram1);
+        shaderProgram1.use();
 
         float timeValue = glfwGetTime();
         float redValue = (sin(timeValue + 0.3) / 2.0f) + 0.5f;
         float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
         float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
 
-        int vertexColorLocation = glGetUniformLocation(shaderProgram1, "color");
+        int vertexColorLocation = glGetUniformLocation(shaderProgram1.ID, "color");
         glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
 
         glBindVertexArray(VAO);
@@ -262,7 +150,8 @@ int main() {
         glDrawArrays(GL_TRIANGLES, 0, 3);
         glBindVertexArray(0);
 
-        glUseProgram(shaderProgram2);
+        shaderProgram2.use();
+
         glBindVertexArray(VAO3);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
@@ -277,7 +166,9 @@ int main() {
     glDeleteBuffers(1, &VBO1);
     glDeleteVertexArrays(1, &VAO2);
     glDeleteBuffers(1, &VBO2);
-    glDeleteProgram(shaderProgram1);
+    
+    shaderProgram1.terminate();
+    shaderProgram2.terminate();
 
     glfwDestroyWindow(window);
     glfwTerminate();
