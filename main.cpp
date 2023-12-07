@@ -127,7 +127,8 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    Triangle t1(glm::vec3(1.0f, 1.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+    Triangle t1 = Triangle(glm::vec3(1.0f, 1.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+    Circle circle;
 
     while (!glfwWindowShouldClose(window)) {
         processInput(window);
@@ -159,7 +160,8 @@ int main() {
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
         shaderProgram1.use();
-        t1.Draw();
+        t1.draw();
+        circle.draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
+#include <glm/gtc/constants.hpp>
 
 class Triangle {
 private:
@@ -18,23 +19,32 @@ public:
     Triangle(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3);
     ~Triangle();
 
-    void Draw();
+    void draw();
 };
 
 class Rectangle {
+private:
+    float vertices[12];
+    int indices[6];
+    unsigned int VAO, VBO, EBO;
+
 public: 
-    Rectangle();
+    Rectangle(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3, glm::vec3 p4);
     ~Rectangle();
 
-    void Draw();
+    void draw();
 };
 
-class Square {
-public:
-    Square();
-    ~Square();
+class Circle {
+private:
+    float vertices[3*10];
+    unsigned int VAO, VBO;
 
-    void Draw();
+public:
+    Circle();
+    ~Circle();
+
+    void draw();
 };
 
 #endif
