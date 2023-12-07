@@ -13,11 +13,12 @@ include_directories(${GLAD_INCLUDE})
 add_subdirectory(C:/Users/Moose/Documents/Dev/glfw-3.3.8 ./glfw)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glm ./glm)
 
-set(SOURCE_FILES main.cpp Shader.cpp ${GLAD_SRC})
+set(SOURCE_FILES main.cpp Shader.cpp Primitives.cpp ${GLAD_SRC})
 
 add_executable(myapp ${SOURCE_FILES})
 
 find_package(OpenGL REQUIRED)
 target_link_libraries(myapp glfw)
+target_link_libraries(myapp glm)
 target_link_libraries(myapp OpenGL::GL)
 target_link_libraries(myapp stdc++)

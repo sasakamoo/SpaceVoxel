@@ -5,6 +5,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Shader.h"
+#include "Primitives.h"
 
 float squareVertices[] = {
      0.5f,  0.5f, 0.0f, // Top Right    
@@ -126,6 +127,8 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    Triangle t1(glm::vec3(1.0f, 1.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(-1.0f, 0.0f, 0.0f));
+
     while (!glfwWindowShouldClose(window)) {
         processInput(window);
 
@@ -154,6 +157,9 @@ int main() {
 
         glBindVertexArray(VAO3);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
+        shaderProgram1.use();
+        t1.Draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
