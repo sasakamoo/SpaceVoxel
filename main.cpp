@@ -149,7 +149,7 @@ int main() {
         glBindVertexArray(VAO2);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         glBindVertexArray(0);
-
+        
         shaderProgram2.use();
 
         glBindVertexArray(VAO3);
@@ -166,9 +166,6 @@ int main() {
     glDeleteBuffers(1, &VBO1);
     glDeleteVertexArrays(1, &VAO2);
     glDeleteBuffers(1, &VBO2);
-    
-    shaderProgram1.terminate();
-    shaderProgram2.terminate();
 
     glfwDestroyWindow(window);
     glfwTerminate();
