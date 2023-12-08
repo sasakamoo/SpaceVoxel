@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include <iostream>
+#include <vector>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -37,7 +38,7 @@ public:
 
 class Circle {
 private:
-    float vertices[3*10];
+    std::vector<glm::vec3> vertices;
     unsigned int VAO, VBO;
 
 public:

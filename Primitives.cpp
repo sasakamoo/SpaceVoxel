@@ -73,11 +73,16 @@ void Rectangle::draw() {
 
 Circle::Circle() {
     int i = 0;
-    for (float theta = 0.0f; theta < 2*glm::pi<float>(); theta += 2*glm::pi<float>() / 10) {
-        vertices[i] = cos(theta);
-        vertices[i+1] = sin(theta);
-        vertices[i+2] = 0.0f;
-        i += 3;
+    
+    std::vector<glm::vec3> temp;
+    for (float theta = 0.0f; theta <= 2*glm::pi<float>(); theta += 2*glm::pi<float>() / 50) {
+        temp.push_back(glm::vec3(cos(theta), sin(theta), 0.0f));
+    }
+
+    for (int i = 0; i < 48; i++) {
+        vertices.push_back(temp[0]);
+        vertices.push_back(temp[i+1]);
+        vertices.push_back(temp[i+2]);
     }
 
     // Generate VAO and VBO
@@ -87,7 +92,7 @@ Circle::Circle() {
     // Bind VAO and VBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec3) * vertices.size(), &vertices[0], GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
@@ -103,5 +108,6 @@ Circle::~Circle() {
 
 void Circle::draw() {
     glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 10);
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glDrawArrays(GL_TRIANGLES, 0, vertices.size());
 }
