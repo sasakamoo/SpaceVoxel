@@ -1,7 +1,6 @@
 #ifndef PRIMITIVES_H
 #define PRIMITIVES_H
 
-#include <Windows.h>
 #include <iostream>
 #include <vector>
 
@@ -13,7 +12,7 @@
 
 class Triangle {
 private:
-    float vertices[9];
+    std::vector<glm::vec3> vertices;
     unsigned int VAO, VBO;
 
 public:
@@ -23,15 +22,15 @@ public:
     void draw();
 };
 
-class Rectangle {
+class Rect {
 private:
-    float vertices[12];
+    std::vector<glm::vec3> vertices;
     int indices[6];
     unsigned int VAO, VBO, EBO;
 
 public: 
-    Rectangle(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3, glm::vec3 p4);
-    ~Rectangle();
+    Rect(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3, glm::vec3 p4);
+    ~Rect();
 
     void draw();
 };
