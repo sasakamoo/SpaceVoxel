@@ -10,6 +10,7 @@ set(GLAD_INCLUDE C:/Users/Moose/Documents/Dev/glad/include)
 set(GLAD_SRC C:/Users/Moose/Documents/Dev/glad/src/glad.c)
 
 include_directories(${GLAD_INCLUDE})
+include_directories(C:/Users/Moose/Documents/Dev/stb)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glfw-3.3.8 ./glfw)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glm ./glm)
 
