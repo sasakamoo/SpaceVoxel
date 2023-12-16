@@ -10,6 +10,10 @@
 #include "Shader.h"
 #include "Primitives.h"
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+
 float vertices[] = {
     // positions          // colors           // texture coords
      0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
@@ -23,11 +27,16 @@ unsigned int indices[] = {
     1, 2, 3
 };
 
+int screenWidth = 800;
+int screenHeight = 600;
+
 void error_callback(int error, const char* description) {
     std::cerr << "Error: " << description << std::endl;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    screenWidth = width;
+    screenHeight = height;
     glViewport(0, 0, width, height);
 }
 
@@ -37,7 +46,6 @@ void processInput(GLFWwindow* window) {
 }
 
 int main() {
-    
     if (!glfwInit()) {
         std::cerr << "Error: Failed Initializing GLFW" << std::endl;
         return -1;
@@ -49,7 +57,7 @@ int main() {
 
     glfwSetErrorCallback(error_callback);
 
-    GLFWwindow* window = glfwCreateWindow(640, 480, "Learning GLFW", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, "Learning GLFW", NULL, NULL);
     
     if (!window) {
         std::cerr << "Error: Creating Window" << std::endl;
@@ -107,41 +115,63 @@ int main() {
     Shader shaderProgram2("./../vertexShader2.shader", "./../fragmentShader2.shader");
 
     // Drawing Objects 
-    Rect r = Rect(glm::vec3(0.5f, 0.5f, 0.0f), glm::vec3(0.5f, -0.5f, 0.0f), glm::vec3(-0.5f, 0.5f, 0.0f), glm::vec3(-0.5f, -0.5f, 0.0f));
-    Triangle t1 = Triangle(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f));
-    Triangle t2 = Triangle(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+    // Rect r = Rect(glm::vec3(0.5f, 0.5f, 0.0f), glm::vec3(0.5f, -0.5f, 0.0f), glm::vec3(-0.5f, 0.5f, 0.0f), glm::vec3(-0.5f, -0.5f, 0.0f));
+    // Triangle t1 = Triangle(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+    // Triangle t2 = Triangle(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f));
     Circle circle;
 
     while (!glfwWindowShouldClose(window)) {
+        glm::mat4 transform = glm::mat4(1.0f);
+        transform = glm::translate(transform, glm::vec3(1.0f, 1.0f, 0.0f));
+        transform = glm::rotate(transform, glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        transform = glm::scale(transform, glm::vec3(0.5f, 0.5f, 0.5f));
+
+        glm::mat4 view = glm::mat4(1.0f);
+        view = glm::translate(view, glm::vec3(-1.0f, -1.0f, -3.0f));
+        view = glm::rotate(view, glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        view = glm::scale(view, glm::vec3(1.0f, 1.0f, 1.0f));
+        
+        glm::mat4 projection = glm::mat4(1.0f);
+        projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
+        
         processInput(window);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        // shaderProgram2.use();
+
+        // glUniform1i(glGetUniformLocation(shaderProgram2.ID, "tex"), 0);
+
+        // glActiveTexture(GL_TEXTURE0);
+        // glBindTexture(GL_TEXTURE_2D, texture);
+
+        // glBindVertexArray(VAO);
+        // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         
-        // shaderProgram1.use();
+        shaderProgram1.use();
 
-        // float timeValue = glfwGetTime();
-        // float redValue = (sin(timeValue + 0.3) / 2.0f) + 0.5f;
-        // float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
-        // float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
+        float timeValue = glfwGetTime();
+        float redValue = (sin(timeValue + 0.3) / 2.0f) + 0.5f;
+        float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
+        float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
 
-        // int vertexColorLocation = glGetUniformLocation(shaderProgram1.ID, "color");
-        // glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
+        int vertexColorLocation = glGetUniformLocation(shaderProgram1.ID, "color");
+        glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
+
+        int transformLocation = glGetUniformLocation(shaderProgram1.ID, "transform");
+        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
+
+        int viewLocation = glGetUniformLocation(shaderProgram1.ID, "view");
+        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(view));
+        
+        int projectionLocation = glGetUniformLocation(shaderProgram1.ID, "projection");
+        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, glm::value_ptr(projection));
         
         // r.draw();
         // t1.draw();
         // t2.draw();
-        // circle.draw();
-
-        shaderProgram2.use();
-
-        glUniform1i(glGetUniformLocation(shaderProgram2.ID, "tex"), 0);
-
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture);
-
-        glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        circle.draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
