@@ -4,15 +4,15 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 #include "Shader.h"
 #include "Primitives.h"
-
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "glm/gtc/type_ptr.hpp"
 
 float vertices[] = {
     // positions          // colors           // texture coords
@@ -96,7 +96,7 @@ int main() {
 
     int width, height, channels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load("./../container.jpg", &width, &height, &channels, 0);
+    unsigned char *data = stbi_load("./../Assets/container.jpg", &width, &height, &channels, 0);
 
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -111,8 +111,8 @@ int main() {
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numAttributes);
     std::cout << "Maximum Number of Vertex Attributes Supported: " << numAttributes << std::endl;
 
-    Shader shaderProgram1("./../vertexShader1.shader", "./../fragmentShader1.shader");
-    Shader shaderProgram2("./../vertexShader2.shader", "./../fragmentShader2.shader");
+    Shader defaultShader("./../Shaders/vsDefault.shader", "./../Shaders/fsDefault.shader");
+    //Shader shaderProgram2("./../vertexShader2.shader", "./../fragmentShader2.shader");
 
     // Drawing Objects 
     // Rect r = Rect(glm::vec3(0.5f, 0.5f, 0.0f), glm::vec3(0.5f, -0.5f, 0.0f), glm::vec3(-0.5f, 0.5f, 0.0f), glm::vec3(-0.5f, -0.5f, 0.0f));
@@ -151,23 +151,23 @@ int main() {
         // glBindVertexArray(VAO);
         // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         
-        shaderProgram1.use();
+        defaultShader.use();
 
         float timeValue = glfwGetTime();
         float redValue = (sin(timeValue + 0.3) / 2.0f) + 0.5f;
         float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
         float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
 
-        int vertexColorLocation = glGetUniformLocation(shaderProgram1.ID, "color");
+        int vertexColorLocation = glGetUniformLocation(defaultShader.ID, "color");
         glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
 
-        int transformLocation = glGetUniformLocation(shaderProgram1.ID, "transform");
+        int transformLocation = glGetUniformLocation(defaultShader.ID, "transform");
         glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
 
-        int viewLocation = glGetUniformLocation(shaderProgram1.ID, "view");
+        int viewLocation = glGetUniformLocation(defaultShader.ID, "view");
         glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(view));
         
-        int projectionLocation = glGetUniformLocation(shaderProgram1.ID, "projection");
+        int projectionLocation = glGetUniformLocation(defaultShader.ID, "projection");
         glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, glm::value_ptr(projection));
         
         // r.draw();

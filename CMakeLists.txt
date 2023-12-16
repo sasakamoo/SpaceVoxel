@@ -9,12 +9,12 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLAD_INCLUDE C:/Users/Moose/Documents/Dev/glad/include)
 set(GLAD_SRC C:/Users/Moose/Documents/Dev/glad/src/glad.c)
 
+include_directories(./Include)
 include_directories(${GLAD_INCLUDE})
 include_directories(C:/Users/Moose/Documents/Dev/stb)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glfw-3.3.8 ./glfw)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glm ./glm)
-
-set(SOURCE_FILES main.cpp Shader.cpp Primitives.cpp ${GLAD_SRC})
+set(SOURCE_FILES ./Source/main.cpp ./Source/Shader.cpp ./Source/Primitives.cpp ${GLAD_SRC})
 
 add_executable(myapp ${SOURCE_FILES})
 
