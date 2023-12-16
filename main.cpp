@@ -127,13 +127,15 @@ int main() {
         transform = glm::scale(transform, glm::vec3(0.5f, 0.5f, 0.5f));
 
         glm::mat4 view = glm::mat4(1.0f);
-        view = glm::translate(view, glm::vec3(-1.0f, -1.0f, -3.0f));
-        view = glm::rotate(view, glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        view = glm::scale(view, glm::vec3(1.0f, 1.0f, 1.0f));
+        glm::vec3 cameraPosition = glm::vec3(1.0f, 1.0f, 3.0f);
+        glm::vec3 cameraTarget = glm::vec3(1.0f, 1.0f, 0.0f);
+        glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+
+        view = glm::lookAt(cameraPosition, cameraTarget, up);
         
         glm::mat4 projection = glm::mat4(1.0f);
         projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
-        
+
         processInput(window);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
