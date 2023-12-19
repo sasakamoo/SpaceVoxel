@@ -14,6 +14,7 @@
 #include "Shader.h"
 #include "Primitives.h"
 #include "Camera.h"
+#include "Input.h"
 
 float vertices[] = {
     // positions          // colors           // texture coords
@@ -114,9 +115,11 @@ int main() {
 
     Camera camera(800, 600);
 
+    Input input;
+
     while (!glfwWindowShouldClose(window)) {
         camera.update();
-        processInput(window);
+        input.update(window);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -138,17 +141,10 @@ int main() {
         float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
         float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
 
-        int vertexColorLocation = glGetUniformLocation(defaultShader.ID, "color");
-        glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
-
-        int transformLocation = glGetUniformLocation(defaultShader.ID, "transform");
-        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(circle.getTransform()));
-
-        int viewLocation = glGetUniformLocation(defaultShader.ID, "view");
-        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(camera.getView()));
-        
-        int projectionLocation = glGetUniformLocation(defaultShader.ID, "projection");
-        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
+        defaultShader.setUniform4f(redValue, greenValue, blueValue, 1.0f, "color");
+        defaultShader.setMatrix4fv(circle.getTransform(), "transform");
+        defaultShader.setMatrix4fv(camera.getView(), "view");
+        defaultShader.setMatrix4fv(camera.getProjection(), "projection");
         
         // r.draw();
         // t1.draw();
