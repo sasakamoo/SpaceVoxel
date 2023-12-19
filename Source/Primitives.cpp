@@ -110,6 +110,14 @@ Circle::~Circle() {
     glDeleteBuffers(1, &VBO);
 }
 
+void Circle::update(const glm::vec3 direction) {
+    static float lastFrameTime = 0;
+    float currentFrameTime = glfwGetTime();
+    float delta = currentFrameTime - lastFrameTime;
+    transform = glm::translate(transform, direction * movespeed * delta);
+    lastFrameTime = currentFrameTime;
+}
+
 const glm::mat4 Circle::getTransform() const {
     return transform;
 }

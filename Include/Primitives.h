@@ -42,9 +42,13 @@ private:
     std::vector<glm::vec3> vertices;
     unsigned int VAO, VBO;
 
+    float movespeed = 10.0f;
+
 public:
     Circle();
     ~Circle();
+
+    void update(const glm::vec3 direction);
 
     const glm::mat4 getTransform() const;
 
