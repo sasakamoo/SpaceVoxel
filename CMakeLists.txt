@@ -14,7 +14,7 @@ include_directories(${GLAD_INCLUDE})
 include_directories(C:/Users/Moose/Documents/Dev/stb)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glfw-3.3.8 ./glfw)
 add_subdirectory(C:/Users/Moose/Documents/Dev/glm ./glm)
-set(SOURCE_FILES ./Source/main.cpp ./Source/Shader.cpp ./Source/Primitives.cpp ${GLAD_SRC})
+set(SOURCE_FILES ./Source/main.cpp ./Source/Shader.cpp ./Source/Primitives.cpp ./Source/Camera.cpp ${GLAD_SRC})
 
 add_executable(myapp ${SOURCE_FILES})
 

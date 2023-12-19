@@ -71,6 +71,11 @@ void Rect::draw() {
 }
 
 Circle::Circle() {
+    transform = glm::mat4(1.0f);
+    transform = glm::translate(transform, glm::vec3(0.0f, 0.0f, 0.0f));
+    transform = glm::rotate(transform, glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    transform = glm::scale(transform, glm::vec3(1.0f, 1.0f, 1.0f));
+
     int i = 0;
     
     std::vector<glm::vec3> temp;
@@ -103,6 +108,10 @@ Circle::Circle() {
 Circle::~Circle() {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+}
+
+const glm::mat4 Circle::getTransform() const {
+    return transform;
 }
 
 void Circle::draw() {

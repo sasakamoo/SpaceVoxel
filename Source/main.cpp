@@ -13,6 +13,7 @@
 
 #include "Shader.h"
 #include "Primitives.h"
+#include "Camera.h"
 
 float vertices[] = {
     // positions          // colors           // texture coords
@@ -27,17 +28,8 @@ unsigned int indices[] = {
     1, 2, 3
 };
 
-int screenWidth = 800;
-int screenHeight = 600;
-
 void error_callback(int error, const char* description) {
     std::cerr << "Error: " << description << std::endl;
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    screenWidth = width;
-    screenHeight = height;
-    glViewport(0, 0, width, height);
 }
 
 void processInput(GLFWwindow* window) {
@@ -57,7 +49,7 @@ int main() {
 
     glfwSetErrorCallback(error_callback);
 
-    GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, "Learning GLFW", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Learning GLFW", NULL, NULL);
     
     if (!window) {
         std::cerr << "Error: Creating Window" << std::endl;
@@ -69,7 +61,7 @@ int main() {
         std::cerr << "Error: Failed Initializing GLAD" << std::endl;
     }
 
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, Camera::framebuffer_size_callback);
 
     unsigned int VAO, VBO, EBO, texture;
     glGenVertexArrays(1, &VAO);
@@ -120,22 +112,10 @@ int main() {
     // Triangle t2 = Triangle(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f));
     Circle circle;
 
+    Camera camera(800, 600);
+
     while (!glfwWindowShouldClose(window)) {
-        glm::mat4 transform = glm::mat4(1.0f);
-        transform = glm::translate(transform, glm::vec3(1.0f, 1.0f, 0.0f));
-        transform = glm::rotate(transform, glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        transform = glm::scale(transform, glm::vec3(0.5f, 0.5f, 0.5f));
-
-        glm::mat4 view = glm::mat4(1.0f);
-        glm::vec3 cameraPosition = glm::vec3(1.0f, 1.0f, 3.0f);
-        glm::vec3 cameraTarget = glm::vec3(1.0f, 1.0f, 0.0f);
-        glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-
-        view = glm::lookAt(cameraPosition, cameraTarget, up);
-        
-        glm::mat4 projection = glm::mat4(1.0f);
-        projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
-
+        camera.update();
         processInput(window);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -162,13 +142,13 @@ int main() {
         glUniform4f(vertexColorLocation, redValue, greenValue, blueValue, 1.0f);
 
         int transformLocation = glGetUniformLocation(defaultShader.ID, "transform");
-        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
+        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(circle.getTransform()));
 
         int viewLocation = glGetUniformLocation(defaultShader.ID, "view");
-        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(camera.getView()));
         
         int projectionLocation = glGetUniformLocation(defaultShader.ID, "projection");
-        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, glm::value_ptr(projection));
+        glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
         
         // r.draw();
         // t1.draw();

@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/constants.hpp>
 
 class Triangle {
@@ -37,12 +38,15 @@ public:
 
 class Circle {
 private:
+    glm::mat4 transform;
     std::vector<glm::vec3> vertices;
     unsigned int VAO, VBO;
 
 public:
     Circle();
     ~Circle();
+
+    const glm::mat4 getTransform() const;
 
     void draw();
 };
