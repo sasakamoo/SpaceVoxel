@@ -1,0 +1,716 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/LLVM/bin/clang.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is Clang, found in:
+        C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/3.28.0-rc4/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/LLVM/bin/clang++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is Clang, found in:
+        C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/3.28.0-rc4/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_364a3/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_364a3.dir\\build.make CMakeFiles/cmTC_364a3.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija'
+        Building C object CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe   -v -MD -MT CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_364a3.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_364a3.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM/bin
+         (in-process)
+         "C:/PROGRA~1/LLVM/bin/clang-15.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija -resource-dir C:/PROGRA~1/LLVM/lib/clang/15.0.0 -dependency-file "CMakeFiles\\\\cmTC_364a3.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/PROGRA~1/LLVM/lib/clang/15.0.0/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM/include -fdebug-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_364a3.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"
+        clang -cc1 version 15.0.0 based upon LLVM 15.0.0 default target x86_64-w64-mingw32
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/PROGRA~1/LLVM/lib/clang/15.0.0/include
+         C:/PROGRA~1/LLVM/include
+        End of search list.
+        Linking C executable cmTC_364a3.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_364a3.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_364a3.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_364a3.dir/objects.a @CMakeFiles\\cmTC_364a3.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -v -Wl,--whole-archive CMakeFiles\\cmTC_364a3.dir/objects.a -Wl,--no-whole-archive -o cmTC_364a3.exe -Wl,--out-implib,libcmTC_364a3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+        clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM/bin
+         "C:/PROGRA~1/LLVM/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_364a3.exe C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib -LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows --whole-archive "CMakeFiles\\\\cmTC_364a3.dir/objects.a" --no-whole-archive --out-implib libcmTC_364a3.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/PROGRA~1/LLVM/lib/clang/15.0.0/include]
+          add: [C:/PROGRA~1/LLVM/include]
+        end of search list found
+        collapse include dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/include] ==> [C:/Program Files/LLVM/lib/clang/15.0.0/include]
+        collapse include dir [C:/PROGRA~1/LLVM/include] ==> [C:/Program Files/LLVM/include]
+        implicit include dirs: [C:/Program Files/LLVM/lib/clang/15.0.0/include;C:/Program Files/LLVM/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_364a3/fast]
+        ignore line: [C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_364a3.dir\\build.make CMakeFiles/cmTC_364a3.dir/build]
+        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija']
+        ignore line: [Building C object CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\clang.exe   -v -MD -MT CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_364a3.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_364a3.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "C:/PROGRA~1/LLVM/bin/clang-15.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija -resource-dir C:/PROGRA~1/LLVM/lib/clang/15.0.0 -dependency-file "CMakeFiles\\\\cmTC_364a3.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_364a3.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/PROGRA~1/LLVM/lib/clang/15.0.0/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM/include -fdebug-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-77uija -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_364a3.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"]
+        ignore line: [clang -cc1 version 15.0.0 based upon LLVM 15.0.0 default target x86_64-w64-mingw32]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/PROGRA~1/LLVM/lib/clang/15.0.0/include]
+        ignore line: [ C:/PROGRA~1/LLVM/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_364a3.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_364a3.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_364a3.dir/objects.a]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_364a3.dir/objects.a @CMakeFiles\\cmTC_364a3.dir\\objects1.rsp]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -v -Wl --whole-archive CMakeFiles\\cmTC_364a3.dir/objects.a -Wl --no-whole-archive -o cmTC_364a3.exe -Wl --out-implib libcmTC_364a3.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+        ignore line: [clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM/bin]
+        link line: [ "C:/PROGRA~1/LLVM/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_364a3.exe C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib -LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows --whole-archive "CMakeFiles\\\\cmTC_364a3.dir/objects.a" --no-whole-archive --out-implib libcmTC_364a3.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+          arg [C:/PROGRA~1/LLVM/bin/ld.lld] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_364a3.exe] ==> ignore
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o]
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib]
+          arg [-LC:/PROGRA~1/LLVM/lib] ==> dir [C:/PROGRA~1/LLVM/lib]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib]
+          arg [-LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows] ==> dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows]
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\\\cmTC_364a3.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_364a3.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        remove lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        remove lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtbegin.o]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/mingw/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/lib] ==> [C:/Program Files/LLVM/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows] ==> [C:/Program Files/LLVM/lib/clang/15.0.0/lib/windows]
+        implicit libs: [mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32]
+        implicit objs: [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crt2.o;C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtbegin.o;C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        implicit dirs: [C:/Program Files/LLVM/x86_64-w64-mingw32/lib;C:/Program Files/LLVM/x86_64-w64-mingw32/mingw/lib;C:/Program Files/LLVM/lib;C:/Program Files/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib;C:/Program Files/LLVM/lib/clang/15.0.0/lib/windows]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_fef85/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_fef85.dir\\build.make CMakeFiles/cmTC_fef85.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh'
+        Building CXX object CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -v -MD -MT CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_fef85.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_fef85.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM/bin
+         (in-process)
+         "C:/PROGRA~1/LLVM/bin/clang-15.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh -resource-dir C:/PROGRA~1/LLVM/lib/clang/15.0.0 -dependency-file "CMakeFiles\\\\cmTC_fef85.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/PROGRA~1/LLVM/include/c++/v1 -internal-isystem C:/PROGRA~1/LLVM/lib/clang/15.0.0/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_fef85.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"
+        clang -cc1 version 15.0.0 based upon LLVM 15.0.0 default target x86_64-w64-mingw32
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include/c++/v1"
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/PROGRA~1/LLVM/include/c++/v1
+         C:/PROGRA~1/LLVM/lib/clang/15.0.0/include
+         C:/PROGRA~1/LLVM/include
+        End of search list.
+        Linking CXX executable cmTC_fef85.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_fef85.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_fef85.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_fef85.dir/objects.a @CMakeFiles\\cmTC_fef85.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE  -v -Wl,--whole-archive CMakeFiles\\cmTC_fef85.dir/objects.a -Wl,--no-whole-archive -o cmTC_fef85.exe -Wl,--out-implib,libcmTC_fef85.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+        clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM/bin
+         "C:/PROGRA~1/LLVM/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_fef85.exe C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib -LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows --whole-archive "CMakeFiles\\\\cmTC_fef85.dir/objects.a" --no-whole-archive --out-implib libcmTC_fef85.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/PROGRA~1/LLVM/include/c++/v1]
+          add: [C:/PROGRA~1/LLVM/lib/clang/15.0.0/include]
+          add: [C:/PROGRA~1/LLVM/include]
+        end of search list found
+        collapse include dir [C:/PROGRA~1/LLVM/include/c++/v1] ==> [C:/Program Files/LLVM/include/c++/v1]
+        collapse include dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/include] ==> [C:/Program Files/LLVM/lib/clang/15.0.0/include]
+        collapse include dir [C:/PROGRA~1/LLVM/include] ==> [C:/Program Files/LLVM/include]
+        implicit include dirs: [C:/Program Files/LLVM/include/c++/v1;C:/Program Files/LLVM/lib/clang/15.0.0/include;C:/Program Files/LLVM/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_fef85/fast]
+        ignore line: [C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_fef85.dir\\build.make CMakeFiles/cmTC_fef85.dir/build]
+        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh']
+        ignore line: [Building CXX object CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE   -v -MD -MT CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_fef85.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_fef85.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "C:/PROGRA~1/LLVM/bin/clang-15.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh -resource-dir C:/PROGRA~1/LLVM/lib/clang/15.0.0 -dependency-file "CMakeFiles\\\\cmTC_fef85.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_fef85.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/PROGRA~1/LLVM/include/c++/v1 -internal-isystem C:/PROGRA~1/LLVM/lib/clang/15.0.0/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-7u1esh -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_fef85.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [clang -cc1 version 15.0.0 based upon LLVM 15.0.0 default target x86_64-w64-mingw32]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include/c++/v1"]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM/x86_64-w64-mingw32/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/PROGRA~1/LLVM/include/c++/v1]
+        ignore line: [ C:/PROGRA~1/LLVM/lib/clang/15.0.0/include]
+        ignore line: [ C:/PROGRA~1/LLVM/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_fef85.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_fef85.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_fef85.dir/objects.a]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_fef85.dir/objects.a @CMakeFiles\\cmTC_fef85.dir\\objects1.rsp]
+        ignore line: [C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE  -v -Wl --whole-archive CMakeFiles\\cmTC_fef85.dir/objects.a -Wl --no-whole-archive -o cmTC_fef85.exe -Wl --out-implib libcmTC_fef85.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+        ignore line: [clang version 15.0.0 (https://github.com/llvm/llvm-project.git 4ba6a9c9f65bbc8bd06e3652cb20fd4dfc846137)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM/bin]
+        link line: [ "C:/PROGRA~1/LLVM/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_fef85.exe C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM/lib -LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib -LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows --whole-archive "CMakeFiles\\\\cmTC_fef85.dir/objects.a" --no-whole-archive --out-implib libcmTC_fef85.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+          arg [C:/PROGRA~1/LLVM/bin/ld.lld] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_fef85.exe] ==> ignore
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o]
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib]
+          arg [-LC:/PROGRA~1/LLVM/lib] ==> dir [C:/PROGRA~1/LLVM/lib]
+          arg [-LC:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib] ==> dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib]
+          arg [-LC:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows] ==> dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows]
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\\\cmTC_fef85.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_fef85.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o] ==> obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        remove lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        remove lib [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crt2.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtbegin.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtbegin.o]
+        collapse obj [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib/crtend.o] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/mingw/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/mingw/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/lib] ==> [C:/Program Files/LLVM/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib] ==> [C:/Program Files/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib]
+        collapse library dir [C:/PROGRA~1/LLVM/lib/clang/15.0.0/lib/windows] ==> [C:/Program Files/LLVM/lib/clang/15.0.0/lib/windows]
+        implicit libs: [mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32]
+        implicit objs: [C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crt2.o;C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtbegin.o;C:/Program Files/LLVM/x86_64-w64-mingw32/lib/crtend.o]
+        implicit dirs: [C:/Program Files/LLVM/x86_64-w64-mingw32/lib;C:/Program Files/LLVM/x86_64-w64-mingw32/mingw/lib;C:/Program Files/LLVM/lib;C:/Program Files/LLVM/x86_64-w64-mingw32/sys-root/mingw/lib;C:/Program Files/LLVM/lib/clang/15.0.0/lib/windows]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-pay8mo"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-pay8mo"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-pay8mo'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_5c317/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5c317.dir\\build.make CMakeFiles/cmTC_5c317.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-pay8mo'
+        Building C object CMakeFiles/cmTC_5c317.dir/src.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_5c317.dir/src.c.obj -MF CMakeFiles\\cmTC_5c317.dir\\src.c.obj.d -o CMakeFiles\\cmTC_5c317.dir\\src.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-pay8mo\\src.c
+        Linking C executable cmTC_5c317.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5c317.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5c317.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5c317.dir/objects.a @CMakeFiles\\cmTC_5c317.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -Wl,--whole-archive CMakeFiles\\cmTC_5c317.dir/objects.a -Wl,--no-whole-archive -o cmTC_5c317.exe -Wl,--out-implib,libcmTC_5c317.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_5c317.dir\\linkLibs.rsp
+        ld.lld: error: undefined symbol: pthread_create
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_detach
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_cancel
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_join
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_exit
+        >>> referenced by objects.a(src.c.obj):(main)
+        clang-15: error: linker command failed with exit code 1 (use -v to see invocation)
+        mingw32-make.exe[1]: *** [CMakeFiles\\cmTC_5c317.dir\\build.make:101: cmTC_5c317.exe] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-pay8mo'
+        mingw32-make.exe: *** [Makefile:126: cmTC_5c317/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-apvoxt"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-apvoxt"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-apvoxt'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_36fde/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_36fde.dir\\build.make CMakeFiles/cmTC_36fde.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-apvoxt'
+        Building C object CMakeFiles/cmTC_36fde.dir/CheckFunctionExists.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_36fde.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_36fde.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_36fde.dir\\CheckFunctionExists.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-apvoxt\\CheckFunctionExists.c
+        Linking C executable cmTC_36fde.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_36fde.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_36fde.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_36fde.dir/objects.a @CMakeFiles\\cmTC_36fde.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_36fde.dir/objects.a -Wl,--no-whole-archive -o cmTC_36fde.exe -Wl,--out-implib,libcmTC_36fde.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_36fde.dir\\linkLibs.rsp
+        lld: error: unable to find library -lpthreads
+        clang-15: error: linker command failed with exit code 1 (use -v to see invocation)
+        mingw32-make.exe[1]: *** [CMakeFiles\\cmTC_36fde.dir\\build.make:101: cmTC_36fde.exe] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-apvoxt'
+        mingw32-make.exe: *** [Makefile:126: cmTC_36fde/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-hnh9ph"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-hnh9ph"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-hnh9ph'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_4ad98/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4ad98.dir\\build.make CMakeFiles/cmTC_4ad98.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-hnh9ph'
+        Building C object CMakeFiles/cmTC_4ad98.dir/CheckFunctionExists.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_4ad98.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_4ad98.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_4ad98.dir\\CheckFunctionExists.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-hnh9ph\\CheckFunctionExists.c
+        Linking C executable cmTC_4ad98.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4ad98.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4ad98.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_4ad98.dir/objects.a @CMakeFiles\\cmTC_4ad98.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_4ad98.dir/objects.a -Wl,--no-whole-archive -o cmTC_4ad98.exe -Wl,--out-implib,libcmTC_4ad98.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_4ad98.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-hnh9ph'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:111 (check_include_file)"
+    checks:
+      - "Looking for dinput.h"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-stbtbm"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-stbtbm"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "DINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-stbtbm'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_f7707/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f7707.dir\\build.make CMakeFiles/cmTC_f7707.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-stbtbm'
+        Building C object CMakeFiles/cmTC_f7707.dir/CheckIncludeFile.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe    -MD -MT CMakeFiles/cmTC_f7707.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_f7707.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_f7707.dir\\CheckIncludeFile.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-stbtbm\\CheckIncludeFile.c
+        Linking C executable cmTC_f7707.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f7707.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f7707.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_f7707.dir/objects.a @CMakeFiles\\cmTC_f7707.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -Wl,--whole-archive CMakeFiles\\cmTC_f7707.dir/objects.a -Wl,--no-whole-archive -o cmTC_f7707.exe -Wl,--out-implib,libcmTC_f7707.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f7707.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-stbtbm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:112 (check_include_file)"
+    checks:
+      - "Looking for xinput.h"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-8618im"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-8618im"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "XINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-8618im'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_62480/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_62480.dir\\build.make CMakeFiles/cmTC_62480.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-8618im'
+        Building C object CMakeFiles/cmTC_62480.dir/CheckIncludeFile.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe    -MD -MT CMakeFiles/cmTC_62480.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_62480.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_62480.dir\\CheckIncludeFile.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-8618im\\CheckIncludeFile.c
+        Linking C executable cmTC_62480.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_62480.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_62480.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_62480.dir/objects.a @CMakeFiles\\cmTC_62480.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -Wl,--whole-archive CMakeFiles\\cmTC_62480.dir/objects.a -Wl,--no-whole-archive -o cmTC_62480.exe -Wl,--out-implib,libcmTC_62480.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_62480.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-8618im'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:122 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_DEP"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-eekca9"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-eekca9"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_DEP"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-eekca9'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_5b86b/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5b86b.dir\\build.make CMakeFiles/cmTC_5b86b.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-eekca9'
+        Building C object CMakeFiles/cmTC_5b86b.dir/src.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -MD -MT CMakeFiles/cmTC_5b86b.dir/src.c.obj -MF CMakeFiles\\cmTC_5b86b.dir\\src.c.obj.d -o CMakeFiles\\cmTC_5b86b.dir\\src.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-eekca9\\src.c
+        clang-15: warning: -Wl,--nxcompat: 'linker' input unused [-Wunused-command-line-argument]
+        Linking C executable cmTC_5b86b.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5b86b.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5b86b.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5b86b.dir/objects.a @CMakeFiles\\cmTC_5b86b.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -Wl,--nxcompat -Wl,--whole-archive CMakeFiles\\cmTC_5b86b.dir/objects.a -Wl,--no-whole-archive -o cmTC_5b86b.exe -Wl,--out-implib,libcmTC_5b86b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_5b86b.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-eekca9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:129 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_ASLR"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-bmdbxz"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-bmdbxz"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_ASLR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-bmdbxz'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_64bca/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_64bca.dir\\build.make CMakeFiles/cmTC_64bca.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-bmdbxz'
+        Building C object CMakeFiles/cmTC_64bca.dir/src.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -MD -MT CMakeFiles/cmTC_64bca.dir/src.c.obj -MF CMakeFiles\\cmTC_64bca.dir\\src.c.obj.d -o CMakeFiles\\cmTC_64bca.dir\\src.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-bmdbxz\\src.c
+        clang-15: warning: -Wl,--dynamicbase: 'linker' input unused [-Wunused-command-line-argument]
+        Linking C executable cmTC_64bca.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_64bca.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_64bca.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_64bca.dir/objects.a @CMakeFiles\\cmTC_64bca.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -Wl,--dynamicbase -Wl,--whole-archive CMakeFiles\\cmTC_64bca.dir/objects.a -Wl,--no-whole-archive -o cmTC_64bca.exe -Wl,--out-implib,libcmTC_64bca.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_64bca.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-bmdbxz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMakeLists.txt:136 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_64ASLR"
+    directories:
+      source: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-kct32v"
+      binary: "C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-kct32v"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Moose/Documents/Dev/glfw-3.3.8/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_64ASLR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-kct32v'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~1/LLVM/bin/mingw32-make.exe -f Makefile cmTC_963cf/fast
+        C:/PROGRA~1/LLVM/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_963cf.dir\\build.make CMakeFiles/cmTC_963cf.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-kct32v'
+        Building C object CMakeFiles/cmTC_963cf.dir/src.c.obj
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -MD -MT CMakeFiles/cmTC_963cf.dir/src.c.obj -MF CMakeFiles\\cmTC_963cf.dir\\src.c.obj.d -o CMakeFiles\\cmTC_963cf.dir\\src.c.obj -c C:\\Users\\Moose\\Documents\\Projects\\GLFWMakefileTest\\Build\\CMakeFiles\\CMakeScratch\\TryCompile-kct32v\\src.c
+        clang-15: warning: -Wl,--high-entropy-va: 'linker' input unused [-Wunused-command-line-argument]
+        Linking C executable cmTC_963cf.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_963cf.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_963cf.dir/objects.a
+        C:\\PROGRA~1\\LLVM\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_963cf.dir/objects.a @CMakeFiles\\cmTC_963cf.dir\\objects1.rsp
+        C:\\PROGRA~1\\LLVM\\bin\\clang.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles\\cmTC_963cf.dir/objects.a -Wl,--no-whole-archive -o cmTC_963cf.exe -Wl,--out-implib,libcmTC_963cf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_963cf.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/Moose/Documents/Projects/GLFWMakefileTest/Build/CMakeFiles/CMakeScratch/TryCompile-kct32v'
+        
+      exitCode: 0
+...
