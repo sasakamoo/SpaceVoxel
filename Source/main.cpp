@@ -29,6 +29,12 @@ unsigned int indices[] = {
     1, 2, 3
 };
 
+float texCoords[] = {
+    0.0f, 0.0f,
+    1.0f, 0.0f,
+    0.5f, 1.0f
+};
+
 void error_callback(int error, const char* description) {
     std::cerr << "Error: " << description << std::endl;
 }
@@ -63,54 +69,60 @@ int main() {
     }
 
     glfwSetFramebufferSizeCallback(window, Camera::framebuffer_size_callback);
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_FALSE);
+    glfwSetKeyCallback(window, Input::wireframeCallback);
 
-    unsigned int VAO, VBO, EBO, texture;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-    glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6*sizeof(float)));
-    glEnableVertexAttribArray(2);
+    // unsigned int VAO, VBO, EBO, texture;
+    // glGenVertexArrays(1, &VAO);
+    // glGenBuffers(1, &VBO);
+    // glGenBuffers(1, &EBO);
+    // glBindVertexArray(VAO);
+    // glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    // glEnableVertexAttribArray(0);
+    // glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
+    // glEnableVertexAttribArray(1);
+    // glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6*sizeof(float)));
+    // glEnableVertexAttribArray(2);
 
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // glGenTextures(1, &texture);
+    // glBindTexture(GL_TEXTURE_2D, texture);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    int width, height, channels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load("./../Assets/container.jpg", &width, &height, &channels, 0);
+    // int width, height, channels;
+    // stbi_set_flip_vertically_on_load(true);
+    // unsigned char *data = stbi_load("./../Assets/container.jpg", &width, &height, &channels, 0);
 
-    if (data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    } else {
-        std::cerr << "Failed to load texture" << std::endl;
-    }
+    // if (data) {
+    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    //     glGenerateMipmap(GL_TEXTURE_2D);
+    // } else {
+    //     std::cerr << "Failed to load texture" << std::endl;
+    // }
 
-    stbi_image_free(data);
+    // stbi_image_free(data);
 
     int numAttributes;
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numAttributes);
-    std::cout << "Maximum Number of Vertex Attributes Supported: " << numAttributes << std::endl;
+    // std::cout << "Maximum Number of Vertex Attributes Supported: " << numAttributes << std::endl;
 
     Shader defaultShader("./../Shaders/vsDefault.shader", "./../Shaders/fsDefault.shader");
-    //Shader shaderProgram2("./../vertexShader2.shader", "./../fragmentShader2.shader");
+    Shader shaderProgram2("./../Shaders/vertexShader2.shader", "./../Shaders/fragmentShader2.shader");
 
-    // Drawing Objects 
-    // Rect r = Rect(glm::vec3(0.5f, 0.5f, 0.0f), glm::vec3(0.5f, -0.5f, 0.0f), glm::vec3(-0.5f, 0.5f, 0.0f), glm::vec3(-0.5f, -0.5f, 0.0f));
-    // Triangle t1 = Triangle(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f));
-    // Triangle t2 = Triangle(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+    //Textures
+    // glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    // glEnableVertexAttribArray(2);
+
+    //Drawing Objects 
+    Rect r = Rect(glm::vec3(0.5f, 0.5f, 0.0f), glm::vec3(0.5f, -0.5f, 0.0f), glm::vec3(-0.5f, 0.5f, 0.0f), glm::vec3(-0.5f, -0.5f, 0.0f));
+    Triangle t1 = Triangle(glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+    Triangle t2 = Triangle(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f));
     Circle circle;
 
     Camera camera(800, 600);
@@ -118,13 +130,14 @@ int main() {
     Input input;
 
     while (!glfwWindowShouldClose(window)) {
-        camera.update();
+        camera.update(window);
         input.update(window);
         circle.update(input.getDirection());
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT);   
 
+        // Texturing Tests
         // shaderProgram2.use();
 
         // glUniform1i(glGetUniformLocation(shaderProgram2.ID, "tex"), 0);
@@ -134,7 +147,7 @@ int main() {
 
         // glBindVertexArray(VAO);
         // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        
+
         defaultShader.use();
 
         float timeValue = glfwGetTime();
@@ -142,14 +155,14 @@ int main() {
         float greenValue = (sin(timeValue + 0.1) / 2.0f) + 0.5f;
         float blueValue = (sin(timeValue) / 2.0f) + 0.5f;
 
-        defaultShader.setUniform4f(redValue, greenValue, blueValue, 1.0f, "color");
+        defaultShader.setUniform4f(redValue, greenValue, blueValue, 0.1f, "color");
         defaultShader.setMatrix4fv(circle.getTransform(), "transform");
         defaultShader.setMatrix4fv(camera.getView(), "view");
         defaultShader.setMatrix4fv(camera.getProjection(), "projection");
         
         // r.draw();
-        // t1.draw();
-        // t2.draw();
+        //t1.draw();
+        //t2.draw();
         circle.draw();
 
         glfwSwapBuffers(window);

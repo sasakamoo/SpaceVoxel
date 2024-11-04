@@ -16,6 +16,8 @@ public:
     void update(GLFWwindow* window);
 
     const glm::vec3 getDirection() const;
+
+    static void wireframeCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 };
 
 #endif

@@ -15,7 +15,6 @@ Camera::Camera(int width, int height) {
 
     view = glm::lookAt(cameraPosition, cameraTarget, up);
     
-    projection = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
 }
 
@@ -27,12 +26,11 @@ const glm::mat4 Camera::getProjection() const {
     return projection;
 }
 
-void Camera::update() {
+void Camera::update(GLFWwindow* window) {
     if (updateViewport) {
         projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
+        updateViewport = false;
     }
-
-    updateViewport = false;
 }
 
 void Camera::framebuffer_size_callback(GLFWwindow* window, int width, int height) {

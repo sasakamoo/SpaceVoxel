@@ -77,14 +77,15 @@ Circle::Circle() {
     transform = glm::scale(transform, glm::vec3(1.0f, 1.0f, 1.0f));
 
     int i = 0;
+    int numPoints = 100;
     
     std::vector<glm::vec3> temp;
-    for (float theta = 0.0f; theta <= 2*glm::pi<float>(); theta += 2*glm::pi<float>() / 50) {
+    for (float theta = 0.0f; theta <= 2*glm::pi<float>(); theta += 2*glm::pi<float>() / numPoints) {
         temp.push_back(glm::vec3(cos(theta), sin(theta), 0.0f));
     }
 
-    for (int i = 0; i < 48; i++) {
-        vertices.push_back(temp[0]);
+    for (int i = 0; i < numPoints-2; i++) {
+        vertices.push_back(temp[0]);    
         vertices.push_back(temp[i+1]);
         vertices.push_back(temp[i+2]);
     }
@@ -124,6 +125,5 @@ const glm::mat4 Circle::getTransform() const {
 
 void Circle::draw() {
     glBindVertexArray(VAO);
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size());
 }

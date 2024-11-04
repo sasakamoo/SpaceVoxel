@@ -25,7 +25,7 @@ public:
     const glm::mat4 getView() const;
     const glm::mat4 getProjection() const;
 
-    void update();
+    void update(GLFWwindow* window);
 
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 };
